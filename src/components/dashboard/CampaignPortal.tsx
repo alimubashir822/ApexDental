@@ -22,7 +22,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import confetti from "canvas-confetti";
-import { generateCampaignCopy } from "@/lib/ai-service";
+import { generateCampaignCopy } from "@/lib/ai-helpers";
 
 interface Campaign {
   id: string;

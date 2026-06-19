@@ -1,6 +1,6 @@
 import React from "react";
 import { prisma } from "@/lib/db";
-import { getGrowthRecommendations } from "@/lib/ai-service";
+import { getGrowthRecommendations } from "@/lib/ai-helpers";
 import { AIPracticeConsultant } from "@/components/dashboard/AIPracticeConsultant";
 import { Badge } from "@/components/ui/Badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";

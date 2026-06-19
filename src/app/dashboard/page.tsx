@@ -2,7 +2,7 @@ import React from "react";
 import { prisma } from "@/lib/db";
 import { OverviewCharts } from "@/components/dashboard/OverviewCharts";
 import { getSession } from "@/lib/auth";
-import { getGrowthRecommendations } from "@/lib/ai-service";
+import { getGrowthRecommendations } from "@/lib/ai-helpers";
 import {
   Users,
   Calendar,

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Bot, User, Sparkles } from "lucide-react";
 import { sendChatbotMessageAction } from "@/lib/chat-actions";
-import { ChatMessage } from "@/lib/ai-service";
+import { ChatMessage } from "@/lib/ai-helpers";
 import confetti from "canvas-confetti";
 
 export function AIChatWidget() {
