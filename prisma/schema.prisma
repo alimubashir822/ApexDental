@@ -1,0 +1,205 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Clinic {
+  id        String   @id @default(uuid())
+  name      String
+  address   String?
+  phone     String?
+  email     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users        User[]
+  leads        Lead[]
+  patients     Patient[]
+  appointments Appointment[]
+  campaigns    Campaign[]
+  messages     Message[]
+  tasks        Task[]
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   // OWNER, DOCTOR, MANAGER, RECEPTIONIST, MARKETING
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clinicId  String
+  clinic    Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+  auditLogs AuditLog[]
+}
+
+model Lead {
+  id                String   @id @default(uuid())
+  name              String
+  email             String
+  phone             String
+  status            String   // NEW, CONTACTED, APPOINTMENT_BOOKED, VISITED, CONVERTED
+  source            String   // GOOGLE_ADS, FACEBOOK, WEBSITE_CHAT, DIRECT_CALL, REFERRAL
+  interestedService String
+  notes             String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  clinicId  String
+  clinic    Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  leadScore         Int      @default(0)
+  intentLevel       String   @default("MEDIUM") // HIGH, MEDIUM, LOW
+  readiness         String   @default("Researching") // e.g. "Within 2 weeks", "Researching"
+  estimatedValue    Float    @default(0.0)
+
+  appointments Appointment[]
+  messages     Message[]
+  followUps    FollowUp[]
+}
+
+model Patient {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  phone       String
+  dateOfBirth String?
+  gender      String?
+  address     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  clinicId  String
+  clinic    Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  futureOpportunityValue Float    @default(0.0)
+  lastVisitDate          DateTime?
+  satisfactionScore      Int      @default(100)
+
+  appointments Appointment[]
+  messages     Message[]
+  followUps    FollowUp[]
+  payments     Payment[]
+}
+
+model Appointment {
+  id         String   @id @default(uuid())
+  dateTime   DateTime
+  duration   Int      @default(30) // in minutes
+  status     String   // PENDING, CONFIRMED, CANCELLED, COMPLETED
+  notes      String?
+  doctorName String
+
+  leadId     String?
+  lead       Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  patientId  String?
+  patient    Patient? @relation(fields: [patientId], references: [id], onDelete: SetNull)
+
+  clinicId   String
+  clinic     Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Campaign {
+  id                String   @id @default(uuid())
+  name              String
+  type              String   // EMAIL, SMS
+  subject           String?
+  content           String
+  audienceSegment   String   // ALL, LEADS_ONLY, PATIENTS_ONLY, INACTIVE_PATIENTS
+  status            String   // DRAFT, SENT
+  leadsCount        Int      @default(0)
+  appointmentsCount Int      @default(0)
+  conversionsCount  Int      @default(0)
+  revenue           Float    @default(0.0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  clinicId  String
+  clinic    Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  direction String   // INBOUND, OUTBOUND
+  channel   String   // CHAT, EMAIL, SMS
+  content   String
+  createdAt DateTime @default(now())
+
+  leadId    String?
+  lead      Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  patientId String?
+  patient   Patient? @relation(fields: [patientId], references: [id], onDelete: SetNull)
+
+  clinicId  String
+  clinic    Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+}
+
+model FollowUp {
+  id              String   @id @default(uuid())
+  scheduledTime   DateTime
+  channel         String   // EMAIL, SMS
+  messageTemplate String
+  status          String   // PENDING, SENT, FAILED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  leadId    String?
+  lead      Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  patientId String?
+  patient   Patient? @relation(fields: [patientId], references: [id], onDelete: SetNull)
+}
+
+model Payment {
+  id        String   @id @default(uuid())
+  amount    Float
+  status    String   // PAID, UNPAID, REFUNDED
+  date      DateTime @default(now())
+  method    String   // CREDIT_CARD, CASH, INSURANCE, BANK_TRANSFER
+  notes     String?
+
+  patientId String
+  patient   Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  name      String
+  rating    Int
+  comment   String
+  status    String   // PENDING, APPROVED, REJECTED
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  details   String
+  createdAt DateTime @default(now())
+
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model Task {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  status      String   // PENDING, COMPLETED
+  dueDate     DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  clinicId    String
+  clinic      Clinic   @relation(fields: [clinicId], references: [id], onDelete: Cascade)
+}

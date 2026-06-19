@@ -1,0 +1,30 @@
+import React from "react";
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  error?: string;
+}
+
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ label, error, className = "", ...props }, ref) => {
+    return (
+      <div className="flex flex-col space-y-1.5 w-full">
+        {label && (
+          <label className="text-xs font-semibold leading-none text-muted-foreground select-none">
+            {label}
+          </label>
+        )}
+        <input
+          ref={ref}
+          className={`flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-150 ${
+            error ? "border-destructive focus-visible:ring-destructive" : "focus:border-primary"
+          } ${className}`}
+          {...props}
+        />
+        {error && <span className="text-xs text-destructive font-medium mt-0.5">{error}</span>}
+      </div>
+    );
+  }
+);
+
+Input.displayName = "Input";
