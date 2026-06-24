@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/Badge";
 import confetti from "canvas-confetti";
 
 export default function SettingsPage() {
-  const [brandName, setBrandName] = useState("CareFlow AI");
+  const [brandName, setBrandName] = useState("ApexDental");
   const [customDomain, setCustomDomain] = useState("portal.apexdentalgrowth.com");
   const [domainVerified, setDomainVerified] = useState(true);
   const [selectedTheme, setSelectedTheme] = useState("teal");
@@ -56,7 +56,7 @@ export default function SettingsPage() {
   };
 
   const themes = [
-    { id: "teal", label: "CareFlow Teal", primary: "#0d9488", bg: "bg-teal-500" },
+    { id: "teal", label: "ApexDental Teal", primary: "#0d9488", bg: "bg-teal-500" },
     { id: "indigo", label: "Apex Indigo", primary: "#4f46e5", bg: "bg-indigo-650 bg-indigo-600" },
     { id: "rose", label: "Cosmetic Rose", primary: "#ec4899", bg: "bg-rose-500" },
     { id: "purple", label: "Royal Amethyst", primary: "#8b5cf6", bg: "bg-purple-600" },
@@ -187,7 +187,7 @@ export default function SettingsPage() {
                       <tr>
                         <td className="p-2 font-bold text-primary">CNAME</td>
                         <td className="p-2">portal</td>
-                        <td className="p-2">cname.careflowai.com</td>
+                        <td className="p-2">cname.apexdentalgrowth.com</td>
                         <td className="p-2">
                           <span className={`inline-flex items-center gap-0.5 text-[9px] font-bold ${
                             domainVerified ? "text-teal-600" : "text-amber-600"

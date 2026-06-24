@@ -1,7 +1,8 @@
 {
-  "name": "medstack",
+  "name": "apexdental",
   "version": "0.1.0",
   "private": true,
+  "author": "Mubashir Ali <alimubashir822@gmail.com> (https://www.medclinicx.com)",
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",

@@ -482,7 +482,7 @@ export async function queryAIConsultantAction(question: string) {
     }
 
     return {
-      reply: `💡 **CareFlow Growth Recommendation:**\n\nTo increase bookings this week, we suggest focusing on your **${await prisma.lead.count({ where: { status: "NEW" } })} new inquiries**.\n\n1. Enable automated **Day 0 SMS follow-ups** in campaigns.\n2. Ensure staff phone high-intent leads within 5 minutes of website chatbot qualification. (Implant leads have a 45% higher booking rate if contacted immediately).\n\nWhat other metrics (LTV, no-show rates, or campaigns) can I analyze for you?`,
+      reply: `💡 **ApexDental Growth Recommendation:**\n\nTo increase bookings this week, we suggest focusing on your **${await prisma.lead.count({ where: { status: "NEW" } })} new inquiries**.\n\n1. Enable automated **Day 0 SMS follow-ups** in campaigns.\n2. Ensure staff phone high-intent leads within 5 minutes of website chatbot qualification. (Implant leads have a 45% higher booking rate if contacted immediately).\n\nWhat other metrics (LTV, no-show rates, or campaigns) can I analyze for you?`,
     };
   } catch (err) {
     console.error("AI Consultant action error:", err);

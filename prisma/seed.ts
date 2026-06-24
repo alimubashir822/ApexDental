@@ -7,7 +7,7 @@ const adapter = new PrismaLibSql({
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  console.log("Seeding database for CareFlow AI...");
+  console.log("Seeding database for ApexDental...");
 
   // Delete all existing data
   await prisma.task.deleteMany();
@@ -36,35 +36,35 @@ async function main() {
   // 2. Create Staff Users with different roles (password is admin123)
   const users = [
     {
-      email: "owner@medstack.com",
+      email: "owner@apexdental.com",
       name: "Dr. Sarah Mitchell",
       role: "OWNER",
       password: "admin123",
       clinicId: clinic.id,
     },
     {
-      email: "doctor@medstack.com",
+      email: "doctor@apexdental.com",
       name: "Dr. Alexander Patel",
       role: "DOCTOR",
       password: "admin123",
       clinicId: clinic.id,
     },
     {
-      email: "manager@medstack.com",
+      email: "manager@apexdental.com",
       name: "Elena Rostova",
       role: "MANAGER",
       password: "admin123",
       clinicId: clinic.id,
     },
     {
-      email: "receptionist@medstack.com",
+      email: "receptionist@apexdental.com",
       name: "Mark Harrison",
       role: "RECEPTIONIST",
       password: "admin123",
       clinicId: clinic.id,
     },
     {
-      email: "marketing@medstack.com",
+      email: "marketing@apexdental.com",
       name: "Chloe Chen",
       role: "MARKETING",
       password: "admin123",
@@ -456,7 +456,7 @@ async function main() {
     await prisma.task.create({ data: t });
   }
 
-  console.log("Database seeded successfully with CareFlow AI data!");
+  console.log("Database seeded successfully with ApexDental data!");
 }
 
 main()

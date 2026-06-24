@@ -12,11 +12,11 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
 
   const demoAccounts = [
-    { role: "Owner", email: "owner@medstack.com", desc: "Dr. Sarah Mitchell" },
-    { role: "Doctor", email: "doctor@medstack.com", desc: "Dr. Alexander Patel" },
-    { role: "Manager", email: "manager@medstack.com", desc: "Elena Rostova" },
-    { role: "Receptionist", email: "receptionist@medstack.com", desc: "Mark Harrison" },
-    { role: "Marketing Staff", email: "marketing@medstack.com", desc: "Chloe Chen" },
+    { role: "Owner", email: "owner@apexdental.com", desc: "Dr. Sarah Mitchell" },
+    { role: "Doctor", email: "doctor@apexdental.com", desc: "Dr. Alexander Patel" },
+    { role: "Manager", email: "manager@apexdental.com", desc: "Elena Rostova" },
+    { role: "Receptionist", email: "receptionist@apexdental.com", desc: "Mark Harrison" },
+    { role: "Marketing Staff", email: "marketing@apexdental.com", desc: "Chloe Chen" },
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +53,7 @@ export default function LoginPage() {
           <div className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-3">
             <Activity className="h-6 w-6 text-primary animate-pulse" />
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight">MedStack CRM Portal</h1>
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight">ApexDental CRM Portal</h1>
           <p className="text-xs text-muted-foreground mt-1">Healthcare Practice Growth & Operations Platform</p>
         </div>
 
@@ -76,7 +76,7 @@ export default function LoginPage() {
                 name="email"
                 type="email"
                 label="Email Address"
-                placeholder="doctor@medstack.com"
+                placeholder="doctor@apexdental.com"
                 required
               />
 

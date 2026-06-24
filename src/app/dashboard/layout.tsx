@@ -111,7 +111,7 @@ export default async function DashboardLayout({
         <div className="h-16 flex items-center px-6 border-b border-border">
           <Link href="/" className="flex items-center space-x-2 text-primary font-bold">
             <Activity className="h-5 w-5 text-primary" />
-            <span className="tracking-tight text-foreground font-extrabold text-sm">MedStack<span className="text-primary font-medium">CRM</span></span>
+            <span className="tracking-tight text-foreground font-extrabold text-sm">ApexDental<span className="text-primary font-medium">CRM</span></span>
           </Link>
         </div>
 

@@ -34,7 +34,7 @@ export default async function PublicLayout({
               <span className="tracking-tight text-foreground font-extrabold">Apex<span className="text-primary font-medium">Dental</span></span>
             </Link>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Premium clinical treatments powered by the MedStack operations platform. Attracting, retaining, and supporting patients globally.
+              Premium clinical treatments powered by the ApexDental operations platform. Attracting, retaining, and supporting patients globally.
             </p>
           </div>
           <div>
@@ -65,7 +65,7 @@ export default async function PublicLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-border/60 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4 text-center sm:text-left">
           <span>&copy; {new Date().getFullYear()} Apex Dental & Growth Platform. All rights reserved.</span>
           <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
-            <span>Powered by MedStack CRM</span>
+            <span>Powered by ApexDental CRM</span>
             <span className="hidden sm:inline">|</span>
             <a href="https://www.medclinicx.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary underline font-semibold transition-colors">
               Healthcare system by Med Clinic X

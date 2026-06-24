@@ -11,7 +11,7 @@ export interface Session {
 export async function getSession(): Promise<Session | null> {
   try {
     const cookieStore = await cookies();
-    const sessionVal = cookieStore.get("medstack_session")?.value;
+    const sessionVal = cookieStore.get("apexdental_session")?.value;
     if (!sessionVal) return null;
     return JSON.parse(decodeURIComponent(sessionVal)) as Session;
   } catch (err: any) {
@@ -26,7 +26,7 @@ export async function getSession(): Promise<Session | null> {
 
 export async function setSession(session: Session) {
   const cookieStore = await cookies();
-  cookieStore.set("medstack_session", encodeURIComponent(JSON.stringify(session)), {
+  cookieStore.set("apexdental_session", encodeURIComponent(JSON.stringify(session)), {
     path: "/",
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -37,5 +37,5 @@ export async function setSession(session: Session) {
 
 export async function clearSession() {
   const cookieStore = await cookies();
-  cookieStore.delete("medstack_session");
+  cookieStore.delete("apexdental_session");
 }

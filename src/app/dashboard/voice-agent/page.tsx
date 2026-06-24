@@ -31,7 +31,7 @@ export default function VoiceAgentPage() {
   const dialogue = [
     {
       speaker: "ai",
-      text: "Thank you for calling Apex Dental & Growth Clinic. I'm Emma, your CareFlow AI assistant. How can I help you today?",
+      text: "Thank you for calling Apex Dental & Growth Clinic. I'm Emma, your ApexDental AI assistant. How can I help you today?",
     },
     {
       speaker: "patient",
@@ -100,7 +100,7 @@ export default function VoiceAgentPage() {
       <div>
         <h1 className="text-xl font-extrabold text-foreground tracking-tight flex items-center gap-2">
           <PhoneCall className="text-primary animate-pulse" />
-          CareFlow AI Voice Agent
+          ApexDental AI Voice Agent
         </h1>
         <p className="text-xs text-muted-foreground mt-0.5">
           Advanced patient voice caller automation. AI answers clinic hours, pricing, and logs scheduled bookings into the CRM.
@@ -244,7 +244,7 @@ export default function VoiceAgentPage() {
               <div className="space-y-1.5">
                 <label className="font-bold text-muted-foreground">Primary Greeting & Instruction Rules</label>
                 <textarea
-                  defaultValue="Greeting: 'Thank you for calling Apex Dental & Growth Clinic. I'm Emma, your CareFlow AI assistant. How can I help you today?'
+                  defaultValue="Greeting: 'Thank you for calling Apex Dental & Growth Clinic. I'm Emma, your ApexDental AI assistant. How can I help you today?'
 Rules:
 1. Standard cleanings and orthodontic checkups cost details.
 2. Accept Cigna, Aetna, Metlife, Delta PPO plans.

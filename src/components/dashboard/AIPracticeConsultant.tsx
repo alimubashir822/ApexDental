@@ -17,7 +17,7 @@ export function AIPracticeConsultant() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Hello! I am your CareFlow Practice Advisor. Ask me anything about clinic operations, LTV statistics, reactivation strategies, or marketing channels.",
+      content: "Hello! I am your ApexDental Practice Advisor. Ask me anything about clinic operations, LTV statistics, reactivation strategies, or marketing channels.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -63,7 +63,7 @@ export function AIPracticeConsultant() {
           <span>Interactive Growth Intelligence Chat</span>
         </CardTitle>
         <CardDescription>
-          Ask CareFlow to analyze appointments, LTV logs, and lead conversions.
+          Ask ApexDental to analyze appointments, LTV logs, and lead conversions.
         </CardDescription>
       </CardHeader>
 

@@ -1,6 +1,8 @@
-# CareFlow AI — Healthcare Practice Operating System
+Created & Developed by [Mubashir Ali](#developer-creator) (Full-Stack Healthcare Technology Engineer | AI Healthcare Solutions Builder)
 
-CareFlow AI is a premium, production-ready AI-powered healthcare growth and operations platform designed to help clinics attract, convert, retain, and manage patients. It moves beyond a simple CRM, resolving clinic bottlenecks like client acquisition, scheduling no-shows, follow-up latencies, and multi-location franchise management.
+# ApexDental — Healthcare Practice Operating System
+
+ApexDental is a premium, production-ready AI-powered healthcare growth and operations platform designed to help clinics attract, convert, retain, and manage patients. It moves beyond a simple CRM, resolving clinic bottlenecks like client acquisition, scheduling no-shows, follow-up latencies, and multi-location franchise management.
 
 ---
 
@@ -76,16 +78,40 @@ Follow these commands to deploy the project locally:
 ## 🔐 Platform Sandbox Roles & Credentials
 Switch between roles using the **Platform Role Sandbox** switcher in the sidebar dashboard layout:
 
-- **Owner (Sarah Mitchell)**: `owner@medstack.com` — Full administrator rights (Analytics, Campaigns, Settings).
-- **Doctor (Alexander Patel)**: `doctor@medstack.com` — Clinical access (Patients registry, Schedule calendar).
-- **Manager (Elena Rostova)**: `manager@medstack.com` — Operational access.
-- **Receptionist (Mark Harrison)**: `receptionist@medstack.com` — Check-in access.
-- **Marketing Staff (Chloe Chen)**: `marketing@medstack.com` — Outreach builder access.
+- **Owner (Sarah Mitchell)**: `owner@apexdental.com` — Full administrator rights (Analytics, Campaigns, Settings).
+- **Doctor (Alexander Patel)**: `doctor@apexdental.com` — Clinical access (Patients registry, Schedule calendar).
+- **Manager (Elena Rostova)**: `manager@apexdental.com` — Operational access.
+- **Receptionist (Mark Harrison)**: `receptionist@apexdental.com` — Check-in access.
+- **Marketing Staff (Chloe Chen)**: `marketing@apexdental.com` — Outreach builder access.
 
 *Default Sandbox Password for all accounts:* **`admin123`**
 
 ---
 
 ## ⚖️ Compliance & Footer Links
-- This platform utilizes audited **HIPAA Security Audit Logs** and tokenized cookie sessions (`medstack_session`).
+- This platform utilizes audited **HIPAA Security Audit Logs** and tokenized cookie sessions (`apexdental_session`).
 - Public navigation footer includes attribution hyperlinks: **[Healthcare system by Med Clinic X](https://www.medclinicx.com/)**.
+
+---
+
+<a id="developer-creator"></a>
+## 👤 Developer & Creator
+
+I am a Full-Stack Healthcare Technology Developer specializing in building modern, scalable, and AI-powered healthcare platforms. I create high-performance digital solutions using React.js, Next.js, TypeScript, and Tailwind CSS to deliver fast, secure, and user-friendly experiences.
+
+My expertise covers complete application development, from frontend architecture and responsive interfaces to backend systems powered by Node.js, REST APIs, GraphQL, PostgreSQL, and Prisma ORM. I build reliable platforms designed for scalability, performance, and long-term growth.
+
+I work with modern cloud infrastructure including AWS, Vercel Edge, Google Cloud, Cloudflare CDN, Docker, and CI/CD pipelines to deploy secure and optimized applications.
+
+With a strong focus on healthcare technology, I develop solutions including patient portals, AI automation systems, EHR integrations, and healthcare applications built around industry standards such as FHIR APIs and HIPAA compliance requirements.
+
+My goal is to combine modern software engineering, cloud technologies, and healthcare innovation to help organizations build smarter digital experiences that improve patient engagement, operational efficiency, and healthcare delivery.
+
+### 📫 Connect with Me
+
+- 💼 **LinkedIn**: <a href="https://linkedin.com/in/mubashirali822" target="_blank" rel="noopener noreferrer">mubashirali822</a>
+- 📧 **Email**: <a href="mailto:alimubashir822@gmail.com" target="_blank" rel="noopener noreferrer">alimubashir822@gmail.com</a>
+- 🌐 **Website**: <a href="https://www.medclinicx.com/" target="_blank" rel="noopener noreferrer">medclinicx.com</a>
+- 🏥 **View More Healthcare Solutions**: <a href="https://www.medclinicx.com/demo" target="_blank" rel="noopener noreferrer">medclinicx.com/demo</a>
+
+⭐ *Building the next generation of digital healthcare technology.*
